@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>MetaCode 内测推广方案 · 邀请 100+ 用户测试</title>
+<meta name="description" content="元任务实验室 · MetaCode 内测推广方案：30 天邀请 100+ 用户完成测试使用。" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --ink-900:#0F172A; --ink-800:#1E293B; --ink-700:#334155;
+  --slate-50:#F8FAFC; --slate-100:#F1F5F9; --slate-200:#E2E8F0; --slate-300:#CBD5E1;
+  --slate-400:#94A3B8; --slate-500:#64748B; --slate-600:#475569;
+  --cyan:#38BDF8; --indigo:#818CF8;
+  --grad:linear-gradient(135deg,#38BDF8 0%,#818CF8 100%);
+  --ok:#22C55E; --warn:#F59E0B; --err:#EF4444;
+  --radius-md:12px; --radius-lg:16px; --radius-xl:24px;
+  --shadow:0 1px 3px rgba(15,23,42,.06),0 8px 24px rgba(15,23,42,.06);
+  --shadow-cta:0 8px 30px rgba(56,189,248,.25);
+  --maxw:1080px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:"Inter","Noto Sans SC",-apple-system,"PingFang SC",sans-serif;
+  color:var(--ink-800); background:var(--slate-50);
+  font-size:16px; line-height:1.7; -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+.eyebrow{display:inline-block;font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--cyan)}
+h2{font-size:clamp(26px,4vw,36px);font-weight:800;color:var(--ink-900);letter-spacing:-.01em;line-height:1.25}
+h3{font-size:19px;font-weight:700;color:var(--ink-900)}
+.muted{color:var(--slate-500)}
+.grad-text{background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:50;background:rgba(248,250,252,.82);backdrop-filter:blur(12px);border-bottom:1px solid var(--slate-200)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;color:var(--ink-900)}
+.logo-mark{width:26px;height:26px;border-radius:7px;background:var(--grad);box-shadow:var(--shadow-cta);position:relative;flex:0 0 auto}
+.logo-mark::after{content:"";position:absolute;inset:7px;border:2px solid rgba(255,255,255,.9);border-radius:3px;transform:rotate(15deg)}
+.nav-links{display:flex;gap:26px;font-size:14px;font-weight:500;color:var(--slate-600)}
+.nav-links a:hover{color:var(--ink-900)}
+@media(max-width:780px){.nav-links{display:none}}
+
+/* HERO */
+.hero{position:relative;overflow:hidden;background:var(--ink-900);color:#fff;padding:96px 0 88px}
+.hero::before{content:"";position:absolute;inset:0;background:
+  radial-gradient(1100px 520px at 75% -10%,rgba(129,140,248,.32),transparent 60%),
+  radial-gradient(900px 480px at 10% 110%,rgba(56,189,248,.22),transparent 60%);}
+.hero .wrap{position:relative}
+.hero .eyebrow{color:var(--cyan)}
+.hero h1{font-size:clamp(34px,6vw,56px);font-weight:800;line-height:1.12;letter-spacing:-.02em;margin:16px 0 18px;color:#fff}
+.hero p.lead{font-size:clamp(16px,2.2vw,19px);color:var(--slate-300);max-width:680px}
+.chips{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.chip{display:flex;flex-direction:column;gap:2px;padding:14px 20px;border-radius:var(--radius-md);background:rgba(148,163,184,.10);border:1px solid rgba(148,163,184,.18)}
+.chip b{font-size:24px;font-weight:800;color:#fff}
+.chip .grad-text{font-size:24px;font-weight:800}
+.chip span{font-size:13px;color:var(--slate-400)}
+.cta-row{display:flex;flex-wrap:wrap;gap:14px;margin-top:36px}
+.btn{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:15px;padding:13px 26px;border-radius:999px;transition:.18s;cursor:pointer;border:1px solid transparent}
+.btn-primary{background:var(--grad);color:#fff;box-shadow:var(--shadow-cta)}
+.btn-primary:hover{transform:translateY(-2px)}
+.btn-ghost{background:transparent;color:#fff;border-color:rgba(148,163,184,.35)}
+.btn-ghost:hover{border-color:#fff}
+
+/* SECTION */
+section.block{padding:84px 0}
+section.block.alt{background:#fff;border-top:1px solid var(--slate-200);border-bottom:1px solid var(--slate-200)}
+.sec-head{max-width:720px;margin-bottom:40px}
+.sec-head h2{margin-top:10px}
+.sec-head p{margin-top:14px;color:var(--slate-500)}
+
+/* CARDS */
+.grid{display:grid;gap:20px}
+.cols-2{grid-template-columns:repeat(2,1fr)}
+.cols-3{grid-template-columns:repeat(3,1fr)}
+.cols-4{grid-template-columns:repeat(4,1fr)}
+@media(max-width:900px){.cols-3,.cols-4{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:620px){.cols-2,.cols-3,.cols-4{grid-template-columns:1fr}}
+.card{background:#fff;border:1px solid var(--slate-200);border-radius:var(--radius-lg);padding:24px;box-shadow:var(--shadow);transition:.18s}
+.card:hover{transform:translateY(-3px);border-color:var(--slate-300)}
+.card .ic{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;background:var(--slate-100);margin-bottom:14px}
+.card h3{margin-bottom:6px}
+.card p{font-size:14.5px;color:var(--slate-500)}
+.card .big{font-size:32px;font-weight:800;color:var(--ink-900);line-height:1.1}
+
+/* METRIC */
+.metric{text-align:left}
+.metric .num{font-size:34px;font-weight:800;line-height:1}
+.metric .lab{font-size:14px;color:var(--slate-500);margin-top:8px}
+
+/* FUNNEL */
+.funnel{display:flex;flex-direction:column;gap:12px;max-width:720px;margin:0 auto}
+.fstep{display:flex;align-items:center;gap:16px;background:#fff;border:1px solid var(--slate-200);border-radius:var(--radius-md);padding:16px 22px;box-shadow:var(--shadow)}
+.fbar{height:14px;border-radius:999px;background:var(--grad)}
+.fstep .meta{min-width:150px}
+.fstep .meta b{display:block;color:var(--ink-900);font-weight:700}
+.fstep .meta span{font-size:13px;color:var(--slate-500)}
+.fstep .val{margin-left:auto;font-size:22px;font-weight:800;color:var(--ink-900)}
+
+/* TABLE */
+.tablecard{background:#fff;border:1px solid var(--slate-200);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow)}
+table{width:100%;border-collapse:collapse;font-size:14.5px}
+th,td{padding:14px 18px;text-align:left;border-bottom:1px solid var(--slate-100)}
+thead th{background:var(--ink-900);color:#fff;font-weight:600;font-size:13.5px}
+tbody tr:last-child td{border-bottom:none}
+tbody tr:hover{background:var(--slate-50)}
+td .tag{display:inline-block;font-size:12px;font-weight:600;padding:2px 10px;border-radius:999px}
+.tag.goal{background:#ECFDF5;color:#047857}
+
+/* CHANNEL */
+.chan{display:flex;gap:16px;align-items:flex-start;background:#fff;border:1px solid var(--slate-200);border-radius:var(--radius-lg);padding:22px 24px;box-shadow:var(--shadow);margin-bottom:16px}
+.prio{flex:0 0 auto;font-weight:800;font-size:13px;color:#fff;padding:6px 12px;border-radius:8px;background:var(--ink-800)}
+.prio.p0{background:var(--grad);box-shadow:var(--shadow-cta)}
+.chan .body h3{margin-bottom:4px}
+.chan .body p{font-size:14.5px;color:var(--slate-500)}
+
+/* TIMELINE */
+.timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+@media(max-width:900px){.timeline{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.timeline{grid-template-columns:1fr}}
+.week{background:#fff;border:1px solid var(--slate-200);border-radius:var(--radius-lg);padding:22px;box-shadow:var(--shadow);position:relative}
+.week .w{font-size:13px;font-weight:700;color:var(--cyan)}
+.week h3{margin:6px 0 10px}
+.week ul{list-style:none;font-size:14px;color:var(--slate-500);display:flex;flex-direction:column;gap:6px}
+.week li::before{content:"▸ ";color:var(--indigo);font-weight:700}
+.week .target{margin-top:14px;font-size:13px;font-weight:700;color:var(--ink-900);padding-top:12px;border-top:1px dashed var(--slate-200)}
+
+/* CHECK LIST */
+.checks{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+@media(max-width:680px){.checks{grid-template-columns:1fr}}
+.check{display:flex;gap:12px;align-items:flex-start;background:#fff;border:1px solid var(--slate-200);border-radius:var(--radius-md);padding:16px 18px;box-shadow:var(--shadow)}
+.check .n{flex:0 0 auto;width:26px;height:26px;border-radius:50%;background:var(--grad);color:#fff;font-weight:700;font-size:13px;display:flex;align-items:center;justify-content:center}
+.check p{font-size:14.5px;color:var(--ink-700)}
+
+/* CALLOUT */
+.callout{background:var(--ink-900);color:#fff;border-radius:var(--radius-xl);padding:44px;position:relative;overflow:hidden}
+.callout::before{content:"";position:absolute;inset:0;background:radial-gradient(700px 300px at 85% 0%,rgba(129,140,248,.3),transparent 60%)}
+.callout .wrap2{position:relative}
+.callout h2{color:#fff}
+.callout p{color:var(--slate-300);margin-top:12px;max-width:640px}
+.note{display:flex;gap:12px;padding:16px 18px;border-radius:var(--radius-md);background:#FFFBEB;border:1px solid #FDE68A;font-size:14px;color:#92400E;margin-top:18px}
+
+/* FOOTER */
+footer{background:var(--ink-900);color:var(--slate-400);padding:40px 0;font-size:13.5px;border-top:1px solid rgba(148,163,184,.16)}
+footer .wrap{display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;align-items:center}
+footer .brand{color:#fff}
+.disc{font-style:italic;color:var(--slate-500);font-size:12.5px;margin-top:8px}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top"><span class="logo-mark"></span>元任务 · MetaCode</a>
+    <div class="nav-links">
+      <a href="#goal">目标</a>
+      <a href="#offer">钩子</a>
+      <a href="#channels">渠道</a>
+      <a href="#timeline">时间表</a>
+      <a href="#budget">预算</a>
+      <a href="#start">立即执行</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <span class="eyebrow">元任务实验室 · 内测推广方案</span>
+    <h1>邀请 <span class="grad-text">100+ 用户</span><br/>来测试 MetaCode</h1>
+    <p class="lead">MetaCode 是一个能读写文件、会跑命令、像不知疲倦的同事一样帮你干活的 AI 工作助手。这是一份 30 天把它推到 100+ 真实测试用户手中的可执行方案。</p>
+    <div class="chips">
+      <div class="chip"><span class="grad-text">100+</span><span>激活测试用户（北极星）</span></div>
+      <div class="chip"><b>250+</b><span>注册（漏斗顶部目标）</span></div>
+      <div class="chip"><b>30 天</b><span>4 周冲刺周期</span></div>
+      <div class="chip"><b>¥30–130</b><span>单激活获客成本</span></div>
+    </div>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="#goal">查看完整方案 →</a>
+      <a class="btn btn-ghost" href="#start">本周 7 件事</a>
+    </div>
+  </div>
+</header>
+
+<!-- 产品一句话 -->
+<section class="block">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">推广口径</span>
+      <h2>一句话讲清 MetaCode</h2>
+      <p>装一行命令、授权一次，就能用自然语言让它干活。对外口径统一为四个差异化卖点。</p>
+    </div>
+    <div class="grid cols-4">
+      <div class="card"><div class="ic">⚡</div><h3>更快</h3><p>相比同类产品速度快约 30%。</p></div>
+      <div class="card"><div class="ic">🔒</div><h3>数据安全</h3><p>本地处理，敏感数据不外传。</p></div>
+      <div class="card"><div class="ic">🛡️</div><h3>稳定可靠</h3><p>企业级稳定性，更少中断。</p></div>
+      <div class="card"><div class="ic">📦</div><h3>内置技能</h3><p>开箱即用模板，几乎零学习成本。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 目标 -->
+<section class="block alt" id="goal">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">第 1 步 · 北极星指标</span>
+      <h2>先把"测试用户"定义清楚</h2>
+      <p>一个用户算「激活」，需同时满足：① 注册 → ② 完成安装+授权 → ③ 至少跑通 1 个真实任务。按漏斗倒推，获客要按 250 注册来打，才能稳拿 100 激活。</p>
+    </div>
+    <div class="grid cols-4" style="margin-bottom:36px">
+      <div class="card metric"><div class="num grad-text">100+</div><div class="lab">激活测试用户</div></div>
+      <div class="card metric"><div class="num">≥250</div><div class="lab">注册用户</div></div>
+      <div class="card metric"><div class="num">≥50</div><div class="lab">有效反馈</div></div>
+      <div class="card metric"><div class="num">≥35%</div><div class="lab">次周留存</div></div>
+    </div>
+    <div class="funnel">
+      <div class="fstep"><div class="meta"><b>渠道触达</b><span>内容 + 兑换码钩子</span></div><div class="fbar" style="width:100%"></div><div class="val">∞</div></div>
+      <div class="fstep"><div class="meta"><b>注册</b><span>领码留资</span></div><div class="fbar" style="width:80%"></div><div class="val">250</div></div>
+      <div class="fstep"><div class="meta"><b>安装 + 授权</b><span>转化率 ~60%</span></div><div class="fbar" style="width:60%"></div><div class="val">150</div></div>
+      <div class="fstep"><div class="meta"><b>激活（首次成功）</b><span>转化率 ~67%</span></div><div class="fbar" style="width:40%"></div><div class="val">100</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 人群 -->
+<section class="block">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">第 2 步 · 目标人群</span>
+      <h2>谁来测，去哪儿找</h2>
+    </div>
+    <div class="tablecard">
+      <table>
+        <thead><tr><th>人群</th><th>痛点 / 钩子</th><th>主渠道</th></tr></thead>
+        <tbody>
+          <tr><td><b>国内独立开发者 / 全栈</b></td><td>想用 Claude Code，但访问与支付难，要平替</td><td>Linux.do、V2EX、掘金、GitHub</td></tr>
+          <tr><td><b>AI 编码尝鲜者 / 学生</b></td><td>想低成本试 AI 编码，国产模型够用</td><td>高校社群、B站、技术群</td></tr>
+          <tr><td><b>数据分析 / 运营 / 产品</b></td><td>不会命令行也想用 AI 做数据、文案、纪要</td><td>小红书、即刻、运营社群</td></tr>
+          <tr><td><b>小团队 Tech Lead</b></td><td>找统一、可计费、可审计的团队 AI 工具</td><td>私域 1v1、行业群、转介绍</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- 钩子 -->
+<section class="block alt" id="offer">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">第 3 步 · 核心钩子</span>
+      <h2>把平台已有的增长机制用足</h2>
+      <p>兑换码 / 邀请码 / 优惠码 / 绑机赠 U 都是平台原生能力，几乎零开发就能跑起来。</p>
+    </div>
+    <div class="grid cols-2">
+      <div class="card"><div class="ic">🎁</div><h3>装好即送 500U（≈¥50）</h3><p>主钩子。每位内测用户一张专属兑换码，够跑通几十个真实任务——"0 元体验，装好即送"。</p></div>
+      <div class="card"><div class="ic">📱</div><h3>绑手机再送 100U</h3><p>复用平台"绑定手机号赠 100U"机制，叠加引导，进一步降门槛。</p></div>
+      <div class="card"><div class="ic">🏅</div><h3>内测官身份</h3><p>激活 + 提交 1 条有效反馈 → 再 +500U，进专属群，享后续 VIP 等级加速 / 直升。</p></div>
+      <div class="card"><div class="ic">🔗</div><h3>邀请裂变</h3><p>每成功邀请 1 位激活用户，双方各 +200U；设邀请榜，TOP3 送团队版月卡。</p></div>
+    </div>
+    <div class="note">💡 成本可控：U 的面值 ≠ 真实成本，上游 token 成本远低于面值。100 人 × 500U ≈ ¥5,000 面值，实际上游成本通常仅其 1/3 ~ 1/5。</div>
+  </div>
+</section>
+
+<!-- 渠道 -->
+<section class="block" id="channels">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">第 4 步 · 渠道打法</span>
+      <h2>按 ROI 排优先级</h2>
+    </div>
+    <div class="chan"><div class="prio p0">P0</div><div class="body"><h3>Linux.do（最高 ROI）</h3><p>平台已支持 Linux.do OAuth 登录，客群最精准。发深度实测帖《用 MetaCode 平替 Claude Code 的一周》+ 招募楼发码，把活跃回帖者发展成 KOC。</p></div></div>
+    <div class="chan"><div class="prio p0">P0</div><div class="body"><h3>私域内测群</h3><p>建「MetaCode 内测官」群承接所有流量，做 onboarding SOP、收反馈、跑邀请榜；1v1 触达已有线索。</p></div></div>
+    <div class="chan"><div class="prio">P1</div><div class="body"><h3>技术内容：掘金 / V2EX / 即刻 / GitHub</h3><p>掘金教程文《一行命令拥有你的 AI 同事》；V2EX「分享创造」重体验轻广告；GitHub 仓 README / Discussions 引流。</p></div></div>
+    <div class="chan"><div class="prio">P1</div><div class="body"><h3>泛内容：B站 / 小红书</h3><p>B站 3–5 分钟实测视频（装机→跑通→对比速度）；小红书面向非技术人群"不用写代码也能用 AI 做 PPT / 数据图 / 文案"。</p></div></div>
+    <div class="chan"><div class="prio">P2</div><div class="body"><h3>KOC / 高校 / 团队</h3><p>5–10 位中小 KOC 各带一波；高校 AI 社团合作；给小团队 Tech Lead 发团队版体验月卡做种子团队。</p></div></div>
+  </div>
+</section>
+
+<!-- 时间表 -->
+<section class="block alt" id="timeline">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">第 5 步 · 执行节奏</span>
+      <h2>4 周冲刺时间表</h2>
+    </div>
+    <div class="timeline">
+      <div class="week"><div class="w">WEEK 1</div><h3>准备</h3><ul><li>落地页 + 物料 + 兑换码批次</li><li>搭内测群 + SOP</li><li>招募 10 名种子 KOC</li></ul><div class="target">阶段目标：20 激活</div></div>
+      <div class="week"><div class="w">WEEK 2</div><h3>点火</h3><ul><li>Linux.do 深度帖</li><li>掘金教程同步发</li><li>私域 1v1 + 开启裂变</li></ul><div class="target">累计：50 激活</div></div>
+      <div class="week"><div class="w">WEEK 3</div><h3>放量</h3><ul><li>B站 / 小红书内容上线</li><li>KOC 集中带量</li><li>邀请榜冲刺</li></ul><div class="target">累计：85 激活</div></div>
+      <div class="week"><div class="w">WEEK 4</div><h3>收口</h3><ul><li>高校 / 团队渠道补量</li><li>集中收反馈</li><li>留存召回</li></ul><div class="target">≥100 激活 · 反馈≥50</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 反馈 + 预算 -->
+<section class="block" id="budget">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">第 6 步 · 闭环与成本</span>
+      <h2>别只追数量——内测是为了反馈</h2>
+    </div>
+    <div class="grid cols-3" style="margin-bottom:36px">
+      <div class="card"><div class="ic">📝</div><h3>反馈闭环</h3><p>激活用户 T+1 推问卷（完成 +500U）；内测群每日轻量问 1 题；按"安装授权 / 模型质量 / 速度 / 计费 / 文档"分类建 Issue，出周报回流研发。</p></div>
+      <div class="card"><div class="ic">💰</div><h3>预算粗估</h3><p>现金支出约 <b>¥7k–13k</b>：体验额度（上游实际 ¥2k–3k）+ KOC/内容 + 物料。单激活 CAC ≈ ¥70–130，重私域 / Linux.do 可压到 ¥30–60。</p></div>
+      <div class="card"><div class="ic">⚠️</div><h3>风险与合规</h3><p>对外聚焦"国产模型优化 + 网关稳定"，<b>不强调代理国外账号</b>；兑换码绑实名防薅羊毛；W1 必须自测通"装机→授权→第一个任务"全链路。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 立即执行 -->
+<section class="block alt" id="start">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Quick Start</span>
+      <h2>本周可立即执行的 7 件事</h2>
+    </div>
+    <div class="checks">
+      <div class="check"><span class="n">1</span><p>定义并埋点「激活」事件（注册 / 授权 / 首次成功调用）。</p></div>
+      <div class="check"><span class="n">2</span><p>产出内测落地页 + 安装命令 + 第一个任务模板。</p></div>
+      <div class="check"><span class="n">3</span><p>生成 150 张内测兑换码（500U / 张）批次。</p></div>
+      <div class="check"><span class="n">4</span><p>建内测官群 + onboarding SOP + 反馈问卷。</p></div>
+      <div class="check"><span class="n">5</span><p>写好 Linux.do 深度帖 & 掘金教程文（配录屏）。</p></div>
+      <div class="check"><span class="n">6</span><p>招募 10 名种子 KOC，先跑通 20 个激活验证流程。</p></div>
+      <div class="check"><span class="n">7</span><p>设邀请榜与奖励规则，开启裂变。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="block">
+  <div class="wrap">
+    <div class="callout">
+      <div class="wrap2">
+        <h2>装好即用，一行命令拥有你的 AI 同事</h2>
+        <p>新手首推网页授权——最省心。让用户首次就成功跑通"第一个任务"，首胜决定留存。</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="https://docs.metask-ai.com/mdx/" target="_blank" rel="noopener">查看 MetaCode 文档 →</a>
+          <a class="btn btn-ghost" href="https://napi.metask-ai.com" target="_blank" rel="noopener">进入控制台</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <div class="brand"><strong>元任务实验室 · MetaCode</strong></div>
+      <div class="disc">本页为内部推广方案（工作记录），数据为目标设定与估算，最终以实际执行为准。视觉遵循元任务品牌视觉规范。</div>
+    </div>
+    <div>制定日期 2026-06-25</div>
+  </div>
+</footer>
+
+</body>
+</html>
