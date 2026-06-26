@@ -3,13 +3,15 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>领取 MetaCode 内测体验额度 · 一行命令，拥有你的 AI 同事</title>
-<meta name="description" content="MetaCode 内测体验入口：领取专属体验额度，一行命令安装，三步跑通你的第一个任务。AI 工作助手，能读写文件、会执行命令，像同事一样帮你完成工作。" />
-<meta property="og:title" content="领取 MetaCode 内测体验额度" />
-<meta property="og:description" content="一行命令安装，三步跑通第一个任务。AI 工作助手，像同事一样帮你完成工作。" />
+<title>用专属邀请码注册 MetaCode · 立得 300U 体验额度</title>
+<meta name="description" content="用专属邀请码注册 MetaCode，立得 300U 体验额度；绑定手机号再赠 100U，最高 400U。一行命令安装，三步跑通你的第一个 AI 任务。先免费跑通，再决定要不要充值。" />
+<meta property="og:title" content="用专属邀请码注册 MetaCode · 立得 300U 体验额度" />
+<meta property="og:description" content="一行命令安装，三步跑通第一个任务。绑手机再赠 100U，最高 400U。AI 工作助手，像同事一样帮你完成工作。" />
+<meta property="og:type" content="website" />
+<meta name="theme-color" content="#0F172A" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet" />
 <style>
 :root{
   --ink-900:#0F172A; --ink-800:#1E293B; --ink-700:#334155;
@@ -48,26 +50,28 @@ h3{font-size:18px;font-weight:700;color:var(--ink-900)}
 .nav .btn-mini{font-size:13.5px;font-weight:600;padding:8px 16px;border-radius:999px;background:var(--ink-900);color:#fff}
 
 /* HERO */
-.hero{position:relative;overflow:hidden;background:var(--ink-900);color:#fff;padding:60px 0 56px;text-align:center}
+.hero{position:relative;overflow:hidden;background:var(--ink-900);color:#fff;padding:54px 0 56px;text-align:center}
 .hero::before{content:"";position:absolute;inset:0;background:
   radial-gradient(900px 460px at 70% -10%,rgba(129,140,248,.34),transparent 60%),
   radial-gradient(760px 420px at 8% 115%,rgba(56,189,248,.24),transparent 60%);}
 .hero .wrap{position:relative}
-.hero h1{font-size:clamp(28px,7vw,46px);font-weight:800;line-height:1.14;letter-spacing:-.02em;margin:14px auto 16px;color:#fff;max-width:600px}
-.hero p.lead{font-size:clamp(15px,4vw,18px);color:var(--slate-300);max-width:520px;margin:0 auto}
+.inviter{display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:600;color:#fff;background:rgba(148,163,184,.12);border:1px solid rgba(148,163,184,.22);padding:6px 14px;border-radius:999px;margin-bottom:6px}
+.inviter .av{width:18px;height:18px;border-radius:50%;background:var(--grad);display:inline-block}
+.hero h1{font-size:clamp(28px,7vw,46px);font-weight:800;line-height:1.14;letter-spacing:-.02em;margin:14px auto 16px;color:#fff;max-width:620px}
+.hero p.lead{font-size:clamp(15px,4vw,18px);color:var(--slate-300);max-width:540px;margin:0 auto}
 .badge-row{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:24px}
 .badge{font-size:13px;font-weight:500;color:var(--slate-300);padding:7px 14px;border-radius:999px;background:rgba(148,163,184,.10);border:1px solid rgba(148,163,184,.20)}
 .badge b{color:#fff;font-weight:700}
 
 /* CLAIM CARD */
-.claim{margin:-34px auto 0;position:relative;z-index:5;background:#fff;border:1px solid var(--slate-200);border-radius:var(--radius-xl);box-shadow:var(--shadow);padding:26px 22px;max-width:520px}
+.claim{margin:-34px auto 0;position:relative;z-index:5;background:#fff;border:1px solid var(--slate-200);border-radius:var(--radius-xl);box-shadow:var(--shadow);padding:26px 22px;max-width:540px}
+.gift{display:flex;align-items:center;gap:6px;width:fit-content;font-size:13.5px;font-weight:700;color:#047857;background:#ECFDF5;border:1px solid #A7F3D0;padding:5px 12px;border-radius:999px;margin:0 auto 14px}
 .claim h3{font-size:17px;text-align:center;margin-bottom:4px}
 .claim .sub{font-size:13.5px;color:var(--slate-500);text-align:center;margin-bottom:18px}
 .code-field{display:flex;gap:10px;align-items:stretch}
-.code-field input{flex:1;min-width:0;font-size:16px;font-weight:600;letter-spacing:.04em;padding:13px 16px;border:1.5px solid var(--slate-300);border-radius:var(--radius-md);color:var(--ink-900);background:var(--slate-50);transition:.15s}
-.code-field input:focus{outline:none;border-color:var(--cyan);background:#fff;box-shadow:0 0 0 4px rgba(56,189,248,.12)}
-.claim-note{font-size:12.5px;color:var(--slate-400);text-align:center;margin-top:12px}
-.gift{display:inline-flex;align-items:center;gap:6px;font-size:13.5px;font-weight:700;color:#047857;background:#ECFDF5;border:1px solid #A7F3D0;padding:5px 12px;border-radius:999px;margin:0 auto 14px;display:flex;width:fit-content}
+.code-display{flex:1;min-width:0;display:flex;align-items:center;justify-content:center;font-size:clamp(18px,5vw,24px);font-weight:700;letter-spacing:.06em;padding:13px 14px;border:1.5px dashed var(--slate-300);border-radius:var(--radius-md);color:var(--ink-900);background:var(--slate-50);overflow-x:auto;white-space:nowrap}
+.claim-note{font-size:12.5px;color:var(--slate-400);text-align:center;margin-top:13px;line-height:1.6}
+.claim-note b{color:var(--ink-700)}
 
 /* BUTTONS */
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-weight:600;font-size:15px;padding:13px 22px;border-radius:999px;transition:.18s;cursor:pointer;border:1px solid transparent;font-family:inherit}
@@ -76,6 +80,7 @@ h3{font-size:18px;font-weight:700;color:var(--ink-900)}
 .btn-block{width:100%}
 .btn-ghost{background:transparent;color:var(--ink-800);border-color:var(--slate-300)}
 .btn-ghost:hover{border-color:var(--ink-800)}
+.btn-lg{font-size:16px;padding:15px 26px}
 
 /* SECTION */
 section.block{padding:54px 0}
@@ -89,7 +94,8 @@ section.block.alt{background:#fff;border-top:1px solid var(--slate-200);border-b
 .step{display:flex;gap:16px;background:#fff;border:1px solid var(--slate-200);border-radius:var(--radius-lg);padding:22px;box-shadow:var(--shadow)}
 .step .n{flex:0 0 auto;width:34px;height:34px;border-radius:50%;background:var(--grad);color:#fff;font-weight:800;font-size:15px;display:flex;align-items:center;justify-content:center;box-shadow:var(--shadow-cta)}
 .step .body{flex:1;min-width:0}
-.step .body h3{margin-bottom:6px}
+.step .body h3{margin-bottom:6px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.step .body h3 .u{font-size:12px;font-weight:700;color:#047857;background:#ECFDF5;border:1px solid #A7F3D0;padding:2px 9px;border-radius:999px}
 .step .body p{font-size:14.5px;color:var(--slate-500)}
 .step .body p+p{margin-top:8px}
 
@@ -154,6 +160,7 @@ section.block.alt{background:#fff;border-top:1px solid var(--slate-200);border-b
 .callout .wrap2{position:relative;max-width:480px;margin:0 auto}
 .callout h2{color:#fff}
 .callout p{color:var(--slate-300);margin:12px 0 22px}
+.callout .code-display{background:rgba(148,163,184,.10);border-color:rgba(148,163,184,.3);color:#fff;margin-bottom:14px}
 
 /* FOOTER */
 footer{background:var(--ink-900);color:var(--slate-400);padding:34px 0;font-size:13px;border-top:1px solid rgba(148,163,184,.16);text-align:center}
@@ -162,8 +169,15 @@ footer .links{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;margin
 footer .links a:hover{color:#fff}
 .disc{color:var(--slate-500);font-size:12px;margin-top:10px}
 
+/* STICKY MOBILE CTA */
+.sticky-cta{position:fixed;left:0;right:0;bottom:0;z-index:60;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-top:1px solid var(--slate-200);padding:10px 16px;display:none;gap:10px;align-items:center}
+.sticky-cta .meta{flex:1;min-width:0;font-size:12px;color:var(--slate-500);line-height:1.3}
+.sticky-cta .meta b{color:var(--ink-900);font-size:13px;display:block}
+.sticky-cta .btn{padding:11px 18px;font-size:14px;flex:0 0 auto}
+@media(max-width:680px){.sticky-cta{display:flex}body{padding-bottom:72px}}
+
 /* TOAST */
-.toast{position:fixed;left:50%;bottom:26px;transform:translateX(-50%) translateY(20px);background:var(--ink-900);color:#fff;font-size:14px;font-weight:600;padding:12px 22px;border-radius:999px;box-shadow:0 10px 30px rgba(15,23,42,.3);opacity:0;pointer-events:none;transition:.25s;z-index:99}
+.toast{position:fixed;left:50%;bottom:90px;transform:translateX(-50%) translateY(20px);background:var(--ink-900);color:#fff;font-size:14px;font-weight:600;padding:12px 22px;border-radius:999px;box-shadow:0 10px 30px rgba(15,23,42,.3);opacity:0;pointer-events:none;transition:.25s;z-index:99}
 .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
 </style>
 </head>
@@ -172,20 +186,21 @@ footer .links a:hover{color:#fff}
 <nav class="nav">
   <div class="wrap">
     <a class="brand" href="#top"><span class="logo-mark"></span>元任务 · MetaCode</a>
-    <a class="btn-mini" href="#install">立即体验</a>
+    <a class="btn-mini" href="#" onclick="goRegister();return false;">注册领额度</a>
   </div>
 </nav>
 
 <header class="hero">
   <div class="wrap">
-    <span class="eyebrow">内测体验邀请</span>
-    <h1>一行命令，<br/>拥有你的 <span class="grad-text">AI 同事</span></h1>
-    <p class="lead">MetaCode 是能读写文件、会执行命令、像同事一样帮你完成工作的 AI 工作助手。<b style="color:#fff">先用免费额度跑通第一个任务，再决定要不要充值。</b></p>
+    <div class="inviter" id="inviterTag" style="display:none"><span class="av"></span><span id="inviterText"></span></div>
+    <span class="eyebrow">专属邀请 · 内测体验</span>
+    <h1>用专属邀请码注册，<br/>立得 <span class="grad-text">300U</span> 体验额度</h1>
+    <p class="lead">MetaCode 是能读写文件、会执行命令、像同事一样帮你干活的 AI 工作助手。<b style="color:#fff">先用免费额度跑通第一个任务，再决定要不要充值。</b></p>
     <div class="badge-row">
-      <span class="badge">🛠️ 原生 <b>Claude 协议</b> · 国产模型优化</span>
+      <span class="badge">🎁 邀请码注册 <b>+300U</b></span>
+      <span class="badge">📱 绑定手机 <b>+100U</b></span>
       <span class="badge">⚡ 比同类快约 <b>30%</b></span>
       <span class="badge">🔒 数据<b>本地处理</b>不外传</span>
-      <span class="badge">💎 计费透明 <b>¥1=10U</b></span>
     </div>
   </div>
 </header>
@@ -193,29 +208,47 @@ footer .links a:hover{color:#fff}
 <!-- 领取卡片 -->
 <div class="wrap">
   <div class="claim">
-    <span class="gift">🎁 新用户体验额度 500U（约 ¥50）· 无需先充值</span>
-    <h3>领取你的专属体验额度</h3>
-    <p class="sub">输入邀请你时收到的兑换码，注册后即可到账，足够跑通数十个真实任务</p>
+    <span class="gift">🎁 邀请码 +300U，绑手机再 +100U · 最高 400U，无需先充值</span>
+    <h3>你的专属邀请码</h3>
+    <p class="sub">注册时填入下方邀请码，300U 体验额度自动到账</p>
     <div class="code-field">
-      <input id="codeInput" type="text" placeholder="输入兑换码，如 METACODE-XXXX" autocomplete="off" spellcheck="false" />
-      <button class="btn btn-primary" onclick="goRegister()">领取</button>
+      <div class="code-display mono" id="codeDisplay">META-XXXX</div>
+      <button class="btn btn-ghost" id="copyCodeBtn" onclick="copyCode()">复制</button>
     </div>
-    <p class="claim-note">还没有兑换码？<a href="#faq" style="color:var(--cyan);font-weight:600">看看如何获取 →</a>　兑换码区分大小写、一次性使用</p>
+    <a class="btn btn-primary btn-block btn-lg" style="margin-top:14px" href="#" onclick="goRegister();return false;">立即注册并使用邀请码 →</a>
+    <p class="claim-note">注册后<b>绑定手机号再得 100U</b>，最高 <b>400U</b> 体验额度<br/>邀请码区分大小写 · ¥1 = 10U，计费透明</p>
   </div>
 </div>
 
-<!-- 三步上手 -->
-<section class="block" id="install">
+<!-- 四步上手 -->
+<section class="block" id="start">
   <div class="wrap">
     <div class="sec-head">
-      <span class="eyebrow">三步上手</span>
-      <h2>从安装到跑通，约 3 分钟</h2>
-      <p>无需复杂配置，复制命令、粘贴回车即可。</p>
+      <span class="eyebrow">四步上手</span>
+      <h2>从注册到跑通，约 5 分钟</h2>
+      <p>先把额度领到手，再一行命令装好，复制粘贴即可。</p>
     </div>
     <div class="steps">
 
       <div class="step">
         <div class="n">1</div>
+        <div class="body">
+          <h3>用邀请码注册 <span class="u">+300U</span></h3>
+          <p>打开注册页，填入你的专属邀请码 <b class="mono" id="codeInline" style="color:var(--ink-900)">META-XXXX</b>，300U 体验额度即时到账。</p>
+          <a class="btn btn-primary" style="margin-top:12px" href="#" onclick="goRegister();return false;">前往注册 →</a>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="n">2</div>
+        <div class="body">
+          <h3>绑定手机号 <span class="u">+100U</span></h3>
+          <p>在账号设置里绑定手机号，平台再赠 100U。两步加起来，最高拿到 <b style="color:var(--ink-900)">400U（约 ¥40）</b>体验额度。</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="n">3</div>
         <div class="body">
           <h3>一行命令安装</h3>
           <p>打开终端，选择你的系统，复制命令运行即可。</p>
@@ -230,26 +263,12 @@ footer .links a:hover{color:#fff}
               <button class="copy-btn" id="copyInstall" onclick="copyInstall()">复制</button>
             </div>
           </div>
-          <p class="verify">安装完成后，运行 <span class="mono">metacode --version</span> 验证是否成功。</p>
+          <p class="verify">安装完成后运行 <span class="mono">metacode --version</span> 验证，授权时任选网页授权 / API Key / 设备码。</p>
         </div>
       </div>
 
       <div class="step">
-        <div class="n">2</div>
-        <div class="body">
-          <h3>授权登录</h3>
-          <p>任选一种方式完成授权，把刚领取的体验额度绑定到你的账号：</p>
-          <div class="auth-row">
-            <span class="auth-pill rec">★ 网页授权（推荐 · 最便捷）</span>
-            <span class="auth-pill">API Key 授权</span>
-            <span class="auth-pill">设备码授权</span>
-          </div>
-          <p style="font-size:13.5px;color:var(--slate-500);margin-top:12px">💡 顺手绑定手机号，平台再赠 <b style="color:var(--ink-900)">100U</b> 体验额度。</p>
-        </div>
-      </div>
-
-      <div class="step">
-        <div class="n">3</div>
+        <div class="n">4</div>
         <div class="body">
           <h3>交给它你的第一个任务</h3>
           <p>用自然语言把工作交给它——就像对同事说话一样。下面三个模板复制即用 👇</p>
@@ -299,10 +318,10 @@ footer .links a:hover{color:#fff}
       <h2>体验越深入，福利越多</h2>
     </div>
     <div class="benefits">
-      <div class="benefit"><span class="ic">🎁</span><div><b>500U 体验额度</b><span>凭兑换码领取，约 ¥50，足够完整跑通数十个真实任务。</span></div></div>
-      <div class="benefit"><span class="ic">📱</span><div><b>绑手机再赠 100U</b><span>绑定手机号即得，叠加体验额度，门槛更低。</span></div></div>
-      <div class="benefit"><span class="ic">🏅</span><div><b>「内测官」身份</b><span>提交一条有效反馈再赠 500U，加入内测官社群，享 VIP 加速权益。</span></div></div>
-      <div class="benefit"><span class="ic">🔗</span><div><b>邀请好友双向奖励</b><span>每邀请一位成功体验的好友，双方各赠 200U；上榜再得团队版月卡。</span></div></div>
+      <div class="benefit"><span class="ic">🎁</span><div><b>邀请码注册 +300U</b><span>填入专属邀请码注册即得，约 ¥30，足够跑通数十个真实任务。</span></div></div>
+      <div class="benefit"><span class="ic">📱</span><div><b>绑手机再 +100U</b><span>绑定手机号即得，叠加邀请额度，最高合计 400U。</span></div></div>
+      <div class="benefit"><span class="ic">🏅</span><div><b>「内测官」身份</b><span>提交一条有效反馈，加入内测官社群，享 VIP 加速与额外额度。</span></div></div>
+      <div class="benefit"><span class="ic">🔗</span><div><b>你也能拿邀请奖励</b><span>注册后会有你自己的邀请码，邀请好友成功体验，双方各得额度。</span></div></div>
     </div>
   </div>
 </section>
@@ -315,12 +334,12 @@ footer .links a:hover{color:#fff}
       <h2>开始前，先看这些</h2>
     </div>
     <div class="faq">
+      <details class="qa" open><summary>怎么拿到 300U？</summary><div class="ans">点击页面上的「立即注册并使用邀请码」按钮前往注册页，在注册时填入本页的专属邀请码，300U 体验额度即时到账；再到账号设置绑定手机号，平台额外赠送 100U，最高合计 400U。</div></details>
       <details class="qa"><summary>MetaCode 到底是什么？</summary><div class="ans">一个 AI 工作助手（命令行工具）。它能读写你的文件、执行命令，用自然语言就能交给它修 Bug、写代码、分析数据出图、写营销文案、整理会议纪要等工作——像一位不知疲倦的同事。</div></details>
-      <details class="qa"><summary>怎么获取兑换码？</summary><div class="ans">兑换码会通过邀请你的人、内测社群或活动专帖发放。如果你是从公开渠道看到本页、还没有码，可以加入内测官社群获取，或绑定手机号先领取平台赠送的 100U 体验。</div></details>
       <details class="qa"><summary>需要会编程吗？</summary><div class="ans">不需要。开发者可以用它修 Bug、写代码；非技术用户同样能用它做数据图、PPT 素材、营销文案与会议纪要。安装只需复制粘贴一行命令，之后用中文对话即可。</div></details>
-      <details class="qa"><summary>体验额度怎么计费？会扣很多吗？</summary><div class="ans">平台按 U 积分计费，<span class="mono">¥1 = 10U</span>。500U 约合 ¥50，足够完整跑通数十个真实任务。余额用完前会有提示，不会自动扣费。</div></details>
+      <details class="qa"><summary>体验额度怎么计费？会扣很多吗？</summary><div class="ans">平台按 U 积分计费，<span class="mono">¥1 = 10U</span>。400U 约合 ¥40，足够完整跑通数十个真实任务。余额用完前会有提示，不会自动扣费——可以先免费跑通，再决定要不要充值。</div></details>
       <details class="qa"><summary>我的数据安全吗？</summary><div class="ans">MetaCode 在本地处理你的文件与数据，敏感内容不外传；底层走元任务自有 AI 网关，企业级稳定。</div></details>
-      <details class="qa"><summary>支持哪些系统？</summary><div class="ans">支持 macOS、Linux 与 Windows。安装命令见上方「三步上手」，按系统切换复制即可。升级运行 <span class="mono">metacode update</span>。</div></details>
+      <details class="qa"><summary>支持哪些系统？</summary><div class="ans">支持 macOS、Linux 与 Windows。安装命令见上方「四步上手」，按系统切换复制即可。升级运行 <span class="mono">metacode update</span>。</div></details>
     </div>
   </div>
 </section>
@@ -330,9 +349,10 @@ footer .links a:hover{color:#fff}
   <div class="wrap">
     <div class="callout">
       <div class="wrap2">
-        <h2>准备好开始了吗？</h2>
-        <p>复制安装命令，三分钟后你就会有一位随叫随到的 AI 同事。</p>
-        <a class="btn btn-primary btn-block" href="#install">⬆ 回到安装步骤</a>
+        <h2>用邀请码注册，立得 300U</h2>
+        <p>绑定手机再 +100U，最高 400U 体验额度。先免费跑通你的第一个任务。</p>
+        <div class="code-display mono" id="codeDisplay2">META-XXXX</div>
+        <a class="btn btn-primary btn-block btn-lg" href="#" onclick="goRegister();return false;">立即注册并使用邀请码 →</a>
       </div>
     </div>
   </div>
@@ -350,14 +370,41 @@ footer .links a:hover{color:#fff}
   </div>
 </footer>
 
+<!-- 移动端常驻 CTA -->
+<div class="sticky-cta">
+  <div class="meta"><b>邀请码 +300U</b>绑手机再 +100U，最高 400U</div>
+  <a class="btn btn-primary" href="#" onclick="goRegister();return false;">注册领额度</a>
+</div>
+
 <div class="toast" id="toast">已复制 ✓</div>
 
 <script>
+/* ============================================================
+   只改这里：填上你的专属邀请码与名字，即可分享到任意渠道
+   ============================================================ */
+var CONFIG = {
+  inviteCode:  'META-XXXX',                 // ← 替换成你的专属邀请码
+  inviterName: '',                          // ← 可选：填你的名字/昵称，会显示「XX 邀请你体验」
+  registerUrl: 'https://napi.metask-ai.com' // 注册/控制台地址
+};
+/* ============================================================ */
+
 var CMDS = {
   unix: { label: 'bash', html: '<span class="tok">curl</span> -fsSL https://metacode.metask-ai.com/install.sh | sh', text: 'curl -fsSL https://metacode.metask-ai.com/install.sh | sh' },
   win:  { label: 'powershell', html: '<span class="tok">irm</span> https://metacode.metask-ai.com/install.ps1 | iex', text: 'irm https://metacode.metask-ai.com/install.ps1 | iex' }
 };
 var curOS = 'unix';
+
+function applyConfig(){
+  var code = CONFIG.inviteCode || '';
+  ['codeDisplay','codeDisplay2','codeInline'].forEach(function(id){
+    var el = document.getElementById(id); if(el) el.textContent = code;
+  });
+  if(CONFIG.inviterName){
+    document.getElementById('inviterText').textContent = CONFIG.inviterName + ' 邀请你体验 MetaCode';
+    document.getElementById('inviterTag').style.display = 'inline-flex';
+  }
+}
 function switchOS(os){
   curOS = os;
   document.querySelectorAll('.os-tab').forEach(function(t){ t.classList.toggle('active', t.dataset.os === os); });
@@ -367,13 +414,20 @@ function switchOS(os){
 }
 function toast(msg){
   var t = document.getElementById('toast'); t.textContent = msg || '已复制 ✓';
-  t.classList.add('show'); clearTimeout(t._h); t._h = setTimeout(function(){ t.classList.remove('show'); }, 1600);
+  t.classList.add('show'); clearTimeout(t._h); t._h = setTimeout(function(){ t.classList.remove('show'); }, 1700);
 }
 function doCopy(text){
   if(navigator.clipboard && navigator.clipboard.writeText){ return navigator.clipboard.writeText(text); }
   return new Promise(function(res){
     var ta = document.createElement('textarea'); ta.value = text; ta.style.position='fixed'; ta.style.opacity='0';
     document.body.appendChild(ta); ta.select(); try{ document.execCommand('copy'); }catch(e){} document.body.removeChild(ta); res();
+  });
+}
+function copyCode(){
+  doCopy(CONFIG.inviteCode).then(function(){
+    var b = document.getElementById('copyCodeBtn'); b.textContent = '已复制 ✓';
+    toast('邀请码已复制，注册时粘贴');
+    setTimeout(function(){ b.textContent='复制'; }, 2000);
   });
 }
 function copyInstall(){
@@ -390,12 +444,15 @@ function copyPrompt(btn){
   });
 }
 function goRegister(){
-  var code = (document.getElementById('codeInput').value || '').trim();
-  var url = 'https://napi.metask-ai.com';
-  if(code){ url += '/?code=' + encodeURIComponent(code); toast('正在前往注册，记得使用该兑换码'); }
+  var code = (CONFIG.inviteCode || '').trim();
+  var url = CONFIG.registerUrl;
+  if(code && code !== 'META-XXXX'){
+    url += (url.indexOf('?') >= 0 ? '&' : '?') + 'invite=' + encodeURIComponent(code);
+    doCopy(code); toast('已复制邀请码，注册时粘贴即可');
+  }
   window.open(url, '_blank', 'noopener');
 }
-document.getElementById('codeInput').addEventListener('keydown', function(e){ if(e.key === 'Enter') goRegister(); });
+applyConfig();
 </script>
 </body>
 </html>
