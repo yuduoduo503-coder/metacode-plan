@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>领取 MetaCode 内测体验额度 · 一行命令，拥有你的 AI 同事</title>
+<meta name="description" content="MetaCode 内测体验入口：领取专属体验额度，一行命令安装，三步跑通你的第一个任务。AI 工作助手，能读写文件、会执行命令，像同事一样帮你完成工作。" />
+<meta property="og:title" content="领取 MetaCode 内测体验额度" />
+<meta property="og:description" content="一行命令安装，三步跑通第一个任务。AI 工作助手，像同事一样帮你完成工作。" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --ink-900:#0F172A; --ink-800:#1E293B; --ink-700:#334155;
+  --slate-50:#F8FAFC; --slate-100:#F1F5F9; --slate-200:#E2E8F0; --slate-300:#CBD5E1;
+  --slate-400:#94A3B8; --slate-500:#64748B; --slate-600:#475569;
+  --cyan:#38BDF8; --indigo:#818CF8;
+  --grad:linear-gradient(135deg,#38BDF8 0%,#818CF8 100%);
+  --ok:#22C55E; --warn:#F59E0B; --err:#EF4444;
+  --radius-md:12px; --radius-lg:16px; --radius-xl:24px;
+  --shadow:0 1px 3px rgba(15,23,42,.06),0 8px 24px rgba(15,23,42,.06);
+  --shadow-cta:0 8px 30px rgba(56,189,248,.25);
+  --maxw:760px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:"Inter","Noto Sans SC",-apple-system,"PingFang SC",sans-serif;
+  color:var(--ink-800); background:var(--slate-50);
+  font-size:16px; line-height:1.7; -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 20px}
+.eyebrow{display:inline-block;font-size:12.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--cyan)}
+h2{font-size:clamp(23px,5.5vw,32px);font-weight:800;color:var(--ink-900);letter-spacing:-.01em;line-height:1.25}
+h3{font-size:18px;font-weight:700;color:var(--ink-900)}
+.muted{color:var(--slate-500)}
+.grad-text{background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.mono{font-family:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:50;background:rgba(248,250,252,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--slate-200)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:58px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:15px;color:var(--ink-900)}
+.logo-mark{width:26px;height:26px;border-radius:7px;background:var(--grad);box-shadow:var(--shadow-cta);position:relative;flex:0 0 auto}
+.logo-mark::after{content:"";position:absolute;inset:7px;border:2px solid rgba(255,255,255,.9);border-radius:3px;transform:rotate(15deg)}
+.nav .btn-mini{font-size:13.5px;font-weight:600;padding:8px 16px;border-radius:999px;background:var(--ink-900);color:#fff}
+
+/* HERO */
+.hero{position:relative;overflow:hidden;background:var(--ink-900);color:#fff;padding:60px 0 56px;text-align:center}
+.hero::before{content:"";position:absolute;inset:0;background:
+  radial-gradient(900px 460px at 70% -10%,rgba(129,140,248,.34),transparent 60%),
+  radial-gradient(760px 420px at 8% 115%,rgba(56,189,248,.24),transparent 60%);}
+.hero .wrap{position:relative}
+.hero h1{font-size:clamp(28px,7vw,46px);font-weight:800;line-height:1.14;letter-spacing:-.02em;margin:14px auto 16px;color:#fff;max-width:600px}
+.hero p.lead{font-size:clamp(15px,4vw,18px);color:var(--slate-300);max-width:520px;margin:0 auto}
+.badge-row{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:24px}
+.badge{font-size:13px;font-weight:500;color:var(--slate-300);padding:7px 14px;border-radius:999px;background:rgba(148,163,184,.10);border:1px solid rgba(148,163,184,.20)}
+.badge b{color:#fff;font-weight:700}
+
+/* CLAIM CARD */
+.claim{margin:-34px auto 0;position:relative;z-index:5;background:#fff;border:1px solid var(--slate-200);border-radius:var(--radius-xl);box-shadow:var(--shadow);padding:26px 22px;max-width:520px}
+.claim h3{font-size:17px;text-align:center;margin-bottom:4px}
+.claim .sub{font-size:13.5px;color:var(--slate-500);text-align:center;margin-bottom:18px}
+.code-field{display:flex;gap:10px;align-items:stretch}
+.code-field input{flex:1;min-width:0;font-size:16px;font-weight:600;letter-spacing:.04em;padding:13px 16px;border:1.5px solid var(--slate-300);border-radius:var(--radius-md);color:var(--ink-900);background:var(--slate-50);transition:.15s}
+.code-field input:focus{outline:none;border-color:var(--cyan);background:#fff;box-shadow:0 0 0 4px rgba(56,189,248,.12)}
+.claim-note{font-size:12.5px;color:var(--slate-400);text-align:center;margin-top:12px}
+.gift{display:inline-flex;align-items:center;gap:6px;font-size:13.5px;font-weight:700;color:#047857;background:#ECFDF5;border:1px solid #A7F3D0;padding:5px 12px;border-radius:999px;margin:0 auto 14px;display:flex;width:fit-content}
+
+/* BUTTONS */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-weight:600;font-size:15px;padding:13px 22px;border-radius:999px;transition:.18s;cursor:pointer;border:1px solid transparent;font-family:inherit}
+.btn-primary{background:var(--grad);color:#fff;box-shadow:var(--shadow-cta)}
+.btn-primary:hover{transform:translateY(-2px)}
+.btn-block{width:100%}
+.btn-ghost{background:transparent;color:var(--ink-800);border-color:var(--slate-300)}
+.btn-ghost:hover{border-color:var(--ink-800)}
+
+/* SECTION */
+section.block{padding:54px 0}
+section.block.alt{background:#fff;border-top:1px solid var(--slate-200);border-bottom:1px solid var(--slate-200)}
+.sec-head{text-align:center;max-width:560px;margin:0 auto 32px}
+.sec-head h2{margin-top:8px}
+.sec-head p{margin-top:12px;color:var(--slate-500);font-size:15px}
+
+/* STEPS */
+.steps{display:flex;flex-direction:column;gap:16px}
+.step{display:flex;gap:16px;background:#fff;border:1px solid var(--slate-200);border-radius:var(--radius-lg);padding:22px;box-shadow:var(--shadow)}
+.step .n{flex:0 0 auto;width:34px;height:34px;border-radius:50%;background:var(--grad);color:#fff;font-weight:800;font-size:15px;display:flex;align-items:center;justify-content:center;box-shadow:var(--shadow-cta)}
+.step .body{flex:1;min-width:0}
+.step .body h3{margin-bottom:6px}
+.step .body p{font-size:14.5px;color:var(--slate-500)}
+.step .body p+p{margin-top:8px}
+
+/* OS TABS + TERMINAL */
+.os-tabs{display:inline-flex;gap:4px;background:var(--slate-100);border-radius:999px;padding:4px;margin:14px 0 10px}
+.os-tab{font-size:13px;font-weight:600;color:var(--slate-500);padding:6px 16px;border-radius:999px;cursor:pointer;transition:.15s;border:none;background:transparent;font-family:inherit}
+.os-tab.active{background:#fff;color:var(--ink-900);box-shadow:0 1px 2px rgba(15,23,42,.08)}
+.term{background:var(--ink-900);border-radius:var(--radius-md);overflow:hidden;border:1px solid #1E293B}
+.term-bar{display:flex;align-items:center;gap:7px;padding:11px 14px;border-bottom:1px solid rgba(148,163,184,.14)}
+.term-bar .dot{width:11px;height:11px;border-radius:50%}
+.term-bar .dot.r{background:#FF5F56}.term-bar .dot.y{background:#FFBD2E}.term-bar .dot.g{background:#27C93F}
+.term-bar .label{margin-left:8px;font-size:12px;color:var(--slate-400)}
+.term-body{display:flex;align-items:center;gap:12px;padding:16px 16px;overflow-x:auto}
+.term-body code{flex:1;min-width:0;font-size:13.5px;color:#E2E8F0;white-space:nowrap}
+.term-body code .tok{color:var(--cyan)}
+.copy-btn{flex:0 0 auto;font-size:12.5px;font-weight:600;color:#fff;background:rgba(148,163,184,.16);border:1px solid rgba(148,163,184,.26);padding:7px 13px;border-radius:8px;cursor:pointer;transition:.15s;font-family:inherit}
+.copy-btn:hover{background:rgba(56,189,248,.22);border-color:var(--cyan)}
+.copy-btn.done{background:rgba(34,197,94,.2);border-color:var(--ok);color:#bbf7d0}
+.verify{font-size:13px;color:var(--slate-500);margin-top:10px}
+.verify .mono{color:var(--ink-700);background:var(--slate-100);padding:2px 8px;border-radius:6px;font-size:12.5px}
+
+/* AUTH PILLS */
+.auth-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
+.auth-pill{font-size:13px;font-weight:600;color:var(--ink-700);background:var(--slate-100);border:1px solid var(--slate-200);padding:8px 14px;border-radius:999px}
+.auth-pill.rec{background:#EFF6FF;border-color:#BFDBFE;color:#1D4ED8}
+
+/* TASK TEMPLATES */
+.grid{display:grid;gap:16px}
+.cols-3{grid-template-columns:repeat(3,1fr)}
+@media(max-width:680px){.cols-3{grid-template-columns:1fr}}
+.task{background:#fff;border:1px solid var(--slate-200);border-radius:var(--radius-lg);padding:20px;box-shadow:var(--shadow);display:flex;flex-direction:column}
+.task .ic{width:38px;height:38px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:19px;background:var(--slate-100);margin-bottom:12px}
+.task h3{font-size:16px;margin-bottom:8px}
+.task .prompt{font-size:13px;color:var(--ink-700);background:var(--slate-50);border:1px dashed var(--slate-300);border-radius:10px;padding:12px;margin:4px 0 14px;flex:1}
+.task .prompt::before{content:"\201C";color:var(--slate-400)}
+.task .prompt::after{content:"\201D";color:var(--slate-400)}
+.task .copy-prompt{font-size:13px;font-weight:600;color:var(--cyan);cursor:pointer;border:none;background:none;font-family:inherit;text-align:left;padding:0}
+.task .copy-prompt:hover{color:var(--indigo)}
+.task .copy-prompt.done{color:var(--ok)}
+
+/* BENEFITS */
+.benefits{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+@media(max-width:560px){.benefits{grid-template-columns:1fr}}
+.benefit{display:flex;gap:14px;align-items:flex-start;background:#fff;border:1px solid var(--slate-200);border-radius:var(--radius-md);padding:18px;box-shadow:var(--shadow)}
+.benefit .ic{flex:0 0 auto;font-size:22px}
+.benefit b{display:block;color:var(--ink-900);font-size:15px;margin-bottom:3px}
+.benefit span{font-size:13.5px;color:var(--slate-500)}
+
+/* FAQ */
+.faq{display:flex;flex-direction:column;gap:10px}
+.qa{background:#fff;border:1px solid var(--slate-200);border-radius:var(--radius-md);box-shadow:var(--shadow);overflow:hidden}
+.qa summary{list-style:none;cursor:pointer;padding:17px 20px;font-weight:600;font-size:15px;color:var(--ink-900);display:flex;align-items:center;justify-content:space-between;gap:12px}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary::after{content:"+";font-size:20px;font-weight:400;color:var(--slate-400);transition:.2s}
+.qa[open] summary::after{transform:rotate(45deg)}
+.qa .ans{padding:0 20px 18px;font-size:14.5px;color:var(--slate-500)}
+.qa .ans .mono{color:var(--ink-700);background:var(--slate-100);padding:1px 7px;border-radius:5px;font-size:12.5px}
+
+/* CALLOUT */
+.callout{background:var(--ink-900);color:#fff;border-radius:var(--radius-xl);padding:40px 30px;position:relative;overflow:hidden;text-align:center}
+.callout::before{content:"";position:absolute;inset:0;background:radial-gradient(600px 280px at 80% 0%,rgba(129,140,248,.32),transparent 60%)}
+.callout .wrap2{position:relative;max-width:480px;margin:0 auto}
+.callout h2{color:#fff}
+.callout p{color:var(--slate-300);margin:12px 0 22px}
+
+/* FOOTER */
+footer{background:var(--ink-900);color:var(--slate-400);padding:34px 0;font-size:13px;border-top:1px solid rgba(148,163,184,.16);text-align:center}
+footer .brand{color:#fff;justify-content:center;margin-bottom:8px}
+footer .links{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;margin:10px 0}
+footer .links a:hover{color:#fff}
+.disc{color:var(--slate-500);font-size:12px;margin-top:10px}
+
+/* TOAST */
+.toast{position:fixed;left:50%;bottom:26px;transform:translateX(-50%) translateY(20px);background:var(--ink-900);color:#fff;font-size:14px;font-weight:600;padding:12px 22px;border-radius:999px;box-shadow:0 10px 30px rgba(15,23,42,.3);opacity:0;pointer-events:none;transition:.25s;z-index:99}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+</style>
+</head>
+<body id="top">
+
+<nav class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top"><span class="logo-mark"></span>元任务 · MetaCode</a>
+    <a class="btn-mini" href="#install">立即体验</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="eyebrow">内测体验邀请</span>
+    <h1>一行命令，<br/>拥有你的 <span class="grad-text">AI 同事</span></h1>
+    <p class="lead">MetaCode 是能读写文件、会执行命令、像同事一样帮你完成工作的 AI 工作助手。<b style="color:#fff">先用免费额度跑通第一个任务，再决定要不要充值。</b></p>
+    <div class="badge-row">
+      <span class="badge">🛠️ 原生 <b>Claude 协议</b> · 国产模型优化</span>
+      <span class="badge">⚡ 比同类快约 <b>30%</b></span>
+      <span class="badge">🔒 数据<b>本地处理</b>不外传</span>
+      <span class="badge">💎 计费透明 <b>¥1=10U</b></span>
+    </div>
+  </div>
+</header>
+
+<!-- 领取卡片 -->
+<div class="wrap">
+  <div class="claim">
+    <span class="gift">🎁 新用户体验额度 500U（约 ¥50）· 无需先充值</span>
+    <h3>领取你的专属体验额度</h3>
+    <p class="sub">输入邀请你时收到的兑换码，注册后即可到账，足够跑通数十个真实任务</p>
+    <div class="code-field">
+      <input id="codeInput" type="text" placeholder="输入兑换码，如 METACODE-XXXX" autocomplete="off" spellcheck="false" />
+      <button class="btn btn-primary" onclick="goRegister()">领取</button>
+    </div>
+    <p class="claim-note">还没有兑换码？<a href="#faq" style="color:var(--cyan);font-weight:600">看看如何获取 →</a>　兑换码区分大小写、一次性使用</p>
+  </div>
+</div>
+
+<!-- 三步上手 -->
+<section class="block" id="install">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">三步上手</span>
+      <h2>从安装到跑通，约 3 分钟</h2>
+      <p>无需复杂配置，复制命令、粘贴回车即可。</p>
+    </div>
+    <div class="steps">
+
+      <div class="step">
+        <div class="n">1</div>
+        <div class="body">
+          <h3>一行命令安装</h3>
+          <p>打开终端，选择你的系统，复制命令运行即可。</p>
+          <div class="os-tabs">
+            <button class="os-tab active" data-os="unix" onclick="switchOS('unix')">macOS / Linux</button>
+            <button class="os-tab" data-os="win" onclick="switchOS('win')">Windows</button>
+          </div>
+          <div class="term">
+            <div class="term-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="label" id="termLabel">bash</span></div>
+            <div class="term-body">
+              <code id="installCmd"><span class="tok">curl</span> -fsSL https://metacode.metask-ai.com/install.sh | sh</code>
+              <button class="copy-btn" id="copyInstall" onclick="copyInstall()">复制</button>
+            </div>
+          </div>
+          <p class="verify">安装完成后，运行 <span class="mono">metacode --version</span> 验证是否成功。</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="n">2</div>
+        <div class="body">
+          <h3>授权登录</h3>
+          <p>任选一种方式完成授权，把刚领取的体验额度绑定到你的账号：</p>
+          <div class="auth-row">
+            <span class="auth-pill rec">★ 网页授权（推荐 · 最便捷）</span>
+            <span class="auth-pill">API Key 授权</span>
+            <span class="auth-pill">设备码授权</span>
+          </div>
+          <p style="font-size:13.5px;color:var(--slate-500);margin-top:12px">💡 顺手绑定手机号，平台再赠 <b style="color:var(--ink-900)">100U</b> 体验额度。</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="n">3</div>
+        <div class="body">
+          <h3>交给它你的第一个任务</h3>
+          <p>用自然语言把工作交给它——就像对同事说话一样。下面三个模板复制即用 👇</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- 第一个任务模板 -->
+<section class="block alt" id="tasks">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">第一个任务 · 复制即用</span>
+      <h2>不知道先做什么？试试这三个</h2>
+      <p>把下面任意一句话发给 MetaCode，感受它如何帮你完成真实工作。</p>
+    </div>
+    <div class="grid cols-3">
+      <div class="task">
+        <div class="ic">📊</div>
+        <h3>数据分析出图</h3>
+        <p class="prompt" id="t1">读取这个 CSV，统计每月销售额，画一张趋势折线图并导出 PNG。</p>
+        <button class="copy-prompt" data-target="t1" onclick="copyPrompt(this)">复制这句 →</button>
+      </div>
+      <div class="task">
+        <div class="ic">🐛</div>
+        <h3>修一个 Bug</h3>
+        <p class="prompt" id="t2">运行项目后报这个错（贴上报错），帮我定位原因并修复，改完跑一遍测试。</p>
+        <button class="copy-prompt" data-target="t2" onclick="copyPrompt(this)">复制这句 →</button>
+      </div>
+      <div class="task">
+        <div class="ic">✍️</div>
+        <h3>写营销文案</h3>
+        <p class="prompt" id="t3">根据这个产品卖点，写 3 条小红书风格的种草文案，带标题和话题标签。</p>
+        <button class="copy-prompt" data-target="t3" onclick="copyPrompt(this)">复制这句 →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 体验权益 -->
+<section class="block" id="benefits">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">内测专属权益</span>
+      <h2>体验越深入，福利越多</h2>
+    </div>
+    <div class="benefits">
+      <div class="benefit"><span class="ic">🎁</span><div><b>500U 体验额度</b><span>凭兑换码领取，约 ¥50，足够完整跑通数十个真实任务。</span></div></div>
+      <div class="benefit"><span class="ic">📱</span><div><b>绑手机再赠 100U</b><span>绑定手机号即得，叠加体验额度，门槛更低。</span></div></div>
+      <div class="benefit"><span class="ic">🏅</span><div><b>「内测官」身份</b><span>提交一条有效反馈再赠 500U，加入内测官社群，享 VIP 加速权益。</span></div></div>
+      <div class="benefit"><span class="ic">🔗</span><div><b>邀请好友双向奖励</b><span>每邀请一位成功体验的好友，双方各赠 200U；上榜再得团队版月卡。</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="block alt" id="faq">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">常见问题</span>
+      <h2>开始前，先看这些</h2>
+    </div>
+    <div class="faq">
+      <details class="qa"><summary>MetaCode 到底是什么？</summary><div class="ans">一个 AI 工作助手（命令行工具）。它能读写你的文件、执行命令，用自然语言就能交给它修 Bug、写代码、分析数据出图、写营销文案、整理会议纪要等工作——像一位不知疲倦的同事。</div></details>
+      <details class="qa"><summary>怎么获取兑换码？</summary><div class="ans">兑换码会通过邀请你的人、内测社群或活动专帖发放。如果你是从公开渠道看到本页、还没有码，可以加入内测官社群获取，或绑定手机号先领取平台赠送的 100U 体验。</div></details>
+      <details class="qa"><summary>需要会编程吗？</summary><div class="ans">不需要。开发者可以用它修 Bug、写代码；非技术用户同样能用它做数据图、PPT 素材、营销文案与会议纪要。安装只需复制粘贴一行命令，之后用中文对话即可。</div></details>
+      <details class="qa"><summary>体验额度怎么计费？会扣很多吗？</summary><div class="ans">平台按 U 积分计费，<span class="mono">¥1 = 10U</span>。500U 约合 ¥50，足够完整跑通数十个真实任务。余额用完前会有提示，不会自动扣费。</div></details>
+      <details class="qa"><summary>我的数据安全吗？</summary><div class="ans">MetaCode 在本地处理你的文件与数据，敏感内容不外传；底层走元任务自有 AI 网关，企业级稳定。</div></details>
+      <details class="qa"><summary>支持哪些系统？</summary><div class="ans">支持 macOS、Linux 与 Windows。安装命令见上方「三步上手」，按系统切换复制即可。升级运行 <span class="mono">metacode update</span>。</div></details>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="block">
+  <div class="wrap">
+    <div class="callout">
+      <div class="wrap2">
+        <h2>准备好开始了吗？</h2>
+        <p>复制安装命令，三分钟后你就会有一位随叫随到的 AI 同事。</p>
+        <a class="btn btn-primary btn-block" href="#install">⬆ 回到安装步骤</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="brand" style="display:flex;align-items:center;gap:10px;font-weight:700"><span class="logo-mark"></span>元任务实验室 · MetaCode</div>
+    <div class="links">
+      <a href="https://docs.metask-ai.com/mdx/" target="_blank" rel="noopener">产品文档</a>
+      <a href="https://napi.metask-ai.com" target="_blank" rel="noopener">控制台</a>
+      <a href="#faq">常见问题</a>
+    </div>
+    <div class="disc">内测体验页 · 体验额度与权益以平台实际发放为准。视觉遵循元任务品牌视觉规范。</div>
+  </div>
+</footer>
+
+<div class="toast" id="toast">已复制 ✓</div>
+
+<script>
+var CMDS = {
+  unix: { label: 'bash', html: '<span class="tok">curl</span> -fsSL https://metacode.metask-ai.com/install.sh | sh', text: 'curl -fsSL https://metacode.metask-ai.com/install.sh | sh' },
+  win:  { label: 'powershell', html: '<span class="tok">irm</span> https://metacode.metask-ai.com/install.ps1 | iex', text: 'irm https://metacode.metask-ai.com/install.ps1 | iex' }
+};
+var curOS = 'unix';
+function switchOS(os){
+  curOS = os;
+  document.querySelectorAll('.os-tab').forEach(function(t){ t.classList.toggle('active', t.dataset.os === os); });
+  document.getElementById('installCmd').innerHTML = CMDS[os].html;
+  document.getElementById('termLabel').textContent = CMDS[os].label;
+  var b = document.getElementById('copyInstall'); b.textContent = '复制'; b.classList.remove('done');
+}
+function toast(msg){
+  var t = document.getElementById('toast'); t.textContent = msg || '已复制 ✓';
+  t.classList.add('show'); clearTimeout(t._h); t._h = setTimeout(function(){ t.classList.remove('show'); }, 1600);
+}
+function doCopy(text){
+  if(navigator.clipboard && navigator.clipboard.writeText){ return navigator.clipboard.writeText(text); }
+  return new Promise(function(res){
+    var ta = document.createElement('textarea'); ta.value = text; ta.style.position='fixed'; ta.style.opacity='0';
+    document.body.appendChild(ta); ta.select(); try{ document.execCommand('copy'); }catch(e){} document.body.removeChild(ta); res();
+  });
+}
+function copyInstall(){
+  doCopy(CMDS[curOS].text).then(function(){
+    var b = document.getElementById('copyInstall'); b.textContent = '已复制 ✓'; b.classList.add('done'); toast('安装命令已复制');
+    setTimeout(function(){ b.textContent='复制'; b.classList.remove('done'); }, 2000);
+  });
+}
+function copyPrompt(btn){
+  var el = document.getElementById(btn.dataset.target);
+  doCopy(el.textContent).then(function(){
+    var orig = btn.textContent; btn.textContent = '已复制 ✓'; btn.classList.add('done'); toast('任务已复制，发给 MetaCode 试试');
+    setTimeout(function(){ btn.textContent = orig; btn.classList.remove('done'); }, 2000);
+  });
+}
+function goRegister(){
+  var code = (document.getElementById('codeInput').value || '').trim();
+  var url = 'https://napi.metask-ai.com';
+  if(code){ url += '/?code=' + encodeURIComponent(code); toast('正在前往注册，记得使用该兑换码'); }
+  window.open(url, '_blank', 'noopener');
+}
+document.getElementById('codeInput').addEventListener('keydown', function(e){ if(e.key === 'Enter') goRegister(); });
+</script>
+</body>
+</html>
