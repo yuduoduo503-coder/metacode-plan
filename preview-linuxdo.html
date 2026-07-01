@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MetaCode · Linux.do 招募长文预览</title>
+<style>
+  :root{
+    --navy:#0F172A; --navy2:#1E293B; --slate:#334155;
+    --s50:#F8FAFC; --s100:#F1F5F9; --s200:#E2E8F0; --s300:#CBD5E1;
+    --s400:#94A3B8; --s500:#64748B; --s600:#475569; --s700:#334155;
+    --grad:linear-gradient(135deg,#38BDF8 0%,#818CF8 100%);
+    --info:#38BDF8; --warn:#F59E0B; --ok:#22C55E;
+    --font:"Inter","Noto Sans SC",-apple-system,"PingFang SC",sans-serif;
+    --mono:"SFMono-Regular",Menlo,Consolas,"Liberation Mono",monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:var(--font);background:var(--s100);color:var(--navy);line-height:1.7;-webkit-font-smoothing:antialiased}
+
+  /* meta banner (仅预览用，不属于帖子正文) */
+  .previewbar{background:var(--navy);color:var(--s300);font-size:13px;padding:10px 16px;text-align:center;letter-spacing:.02em}
+  .previewbar b{color:#7DD3FC;font-weight:600}
+
+  .wrap{max-width:760px;margin:0 auto;padding:0 20px 80px}
+
+  /* 模拟论坛帖头 */
+  .post-head{background:#fff;border:1px solid var(--s200);border-top:none;border-radius:0 0 16px 16px;padding:28px 32px 24px;box-shadow:0 1px 3px rgba(15,23,42,.06)}
+  .crumbs{font-size:13px;color:var(--s500);margin-bottom:14px}
+  .crumbs .tag{display:inline-block;background:var(--s100);color:var(--s600);border-radius:999px;padding:3px 12px;font-size:12px;font-weight:600}
+  h1{font-size:26px;font-weight:800;line-height:1.35;color:var(--navy);letter-spacing:-.01em}
+  .author{display:flex;align-items:center;gap:12px;margin-top:20px;padding-top:18px;border-top:1px solid var(--s200)}
+  .avatar{width:40px;height:40px;border-radius:999px;background:var(--grad);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:15px}
+  .author .name{font-weight:600;font-size:15px}
+  .author .sub{font-size:12px;color:var(--s500)}
+
+  /* 帖子正文卡 */
+  .post-body{background:#fff;border:1px solid var(--s200);border-radius:16px;padding:36px 32px;margin-top:16px;box-shadow:0 1px 3px rgba(15,23,42,.06)}
+  .post-body p{margin:0 0 16px;font-size:16px;color:var(--s700)}
+  .post-body h3{font-size:19px;font-weight:700;color:var(--navy);margin:32px 0 14px;display:flex;align-items:center;gap:8px}
+  .post-body h3::before{content:"";width:4px;height:18px;border-radius:2px;background:var(--grad)}
+  .post-body ul{margin:0 0 16px;padding-left:0;list-style:none}
+  .post-body li{position:relative;padding-left:22px;margin-bottom:10px;font-size:15.5px;color:var(--s700)}
+  .post-body li::before{content:"";position:absolute;left:4px;top:11px;width:6px;height:6px;border-radius:999px;background:var(--info)}
+  .post-body strong{color:var(--navy);font-weight:700}
+  code{font-family:var(--mono);background:var(--s100);border:1px solid var(--s200);border-radius:6px;padding:1px 6px;font-size:13.5px;color:#0369a1}
+
+  /* 引言/免责块 */
+  blockquote{background:#FFFBEB;border-left:4px solid var(--warn);border-radius:0 10px 10px 0;padding:14px 18px;margin:20px 0;font-size:14.5px;color:#854D0E}
+  blockquote strong{color:#713F12}
+
+  /* 邀请高亮块 */
+  .invite{background:var(--navy);border-radius:16px;padding:24px 26px;margin:26px 0;color:#fff;box-shadow:0 8px 30px rgba(15,23,42,.18)}
+  .invite .lbl{font-size:13px;color:var(--s400);letter-spacing:.05em;text-transform:uppercase;font-weight:600}
+  .invite .code{font-family:var(--mono);font-size:30px;font-weight:800;letter-spacing:.08em;background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;margin:8px 0 4px}
+  .invite .u{display:inline-block;background:rgba(56,189,248,.15);color:#7DD3FC;border-radius:999px;padding:4px 14px;font-size:13px;font-weight:700;margin-top:6px}
+  .invite a.cta{display:inline-block;margin-top:16px;background:var(--grad);color:#fff;text-decoration:none;font-weight:700;font-size:15px;padding:12px 24px;border-radius:12px;box-shadow:0 8px 30px rgba(56,189,248,.25)}
+  .invite .link{display:block;margin-top:12px;font-family:var(--mono);font-size:12.5px;color:var(--s400);word-break:break-all}
+
+  /* 命令块 */
+  .cmd{background:var(--navy2);border:1px solid #273448;border-radius:12px;padding:16px 18px;margin:12px 0;font-family:var(--mono);font-size:13px;color:#E2E8F0;overflow-x:auto}
+  .cmd .os{color:var(--s400);font-family:var(--font);font-size:12px;font-weight:600;display:block;margin-bottom:6px}
+  .cmd .prompt{color:#7DD3FC}
+  .steps{counter-reset:s;margin:8px 0}
+  .step{position:relative;padding:4px 0 20px 44px;border-left:2px solid var(--s200);margin-left:14px}
+  .step:last-child{border-left:2px solid transparent}
+  .step::before{counter-increment:s;content:counter(s);position:absolute;left:-15px;top:0;width:30px;height:30px;border-radius:999px;background:var(--navy);color:#fff;font-weight:700;font-size:14px;display:flex;align-items:center;justify-content:center}
+  .step .st{font-weight:700;color:var(--navy);font-size:16px;margin-bottom:8px;display:block}
+
+  .foot{text-align:center;color:var(--s500);font-size:13px;margin-top:34px}
+  .foot a{color:#0369a1}
+  hr{border:none;border-top:1px solid var(--s200);margin:26px 0}
+
+  @media(max-width:640px){
+    .post-head,.post-body{padding-left:20px;padding-right:20px}
+    h1{font-size:22px}
+    .invite .code{font-size:24px}
+  }
+</style>
+</head>
+<body>
+  <div class="previewbar">📄 内容预览 · <b>Linux.do 招募长文</b> · 元任务 MetaCode 内测推广（此顶栏仅预览标注，不属于帖子正文）</div>
+
+  <div class="wrap">
+    <div class="post-head">
+      <div class="crumbs"><span class="tag">扩列 / 资源</span> &nbsp;·&nbsp; 建议标题不带营销味</div>
+      <h1>用 MetaCode 平替 Claude Code 的一周：300U 免费额度，先跑通再决定充不充</h1>
+      <div class="author">
+        <div class="avatar">AI</div>
+        <div>
+          <div class="name">AI研究员</div>
+          <div class="sub">备用标题：又一个「Claude Code 国产平替」？我先白嫖了 300U 跑了一周，说点实话</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="post-body">
+      <p>最近 Claude Code 在国内用着越来越折腾——网络、账号、风控，时不时就断一下。市面上「中转 / 平替」一抓一大把，我也踩过几个坑（充了钱结果限速 / 跑路的就不点名了）。所以这阵子我对所有「平替」都先<strong>白嫖跑通再说，绝不先大额充值</strong>。</p>
+
+      <p>这篇是分享我这一周在用的 <strong>MetaCode</strong>（元任务实验室出的 AI 工作助手 CLI），顺带带个内测邀请。<strong>先把丑话说前面：文末是我的邀请码，用它注册你能拿 300U 免费额度（约 ¥30），够跑几十个真实任务——我图的是参与内测，你图的是白嫖跑通。介意带码的，自己裸注册也行（下面会说区别）。</strong></p>
+
+      <h3>它是个啥</h3>
+      <p>一个命令行 AI 工作助手，命令就叫 <code>metacode</code>。能读写本地文件、会跑命令，用自然语言把活儿交给它就行——修 bug、写代码、读 CSV 出图、写文案、整理会议纪要都能干。</p>
+      <p>底层走的是<strong>原生 Claude 协议、完整 CC 那套能力</strong>，同时对国产模型（MiniMax M2.5、GLM-5.1 这些）做了优化。官方说比同类快约 30%、数据本地处理不外传——这俩我没法精确测，但<strong>体感延迟确实稳</strong>，一周没遇到中途抽风。</p>
+
+      <h3>我这一周拿它干了啥</h3>
+      <ul>
+        <li><strong>修 bug</strong>：贴报错让它定位，它会自己读相关文件、给修法、改完顺手把测试跑一遍。</li>
+        <li><strong>数据出图</strong>：丢个 CSV 让它统计 + 画趋势图导 PNG，省了我手搓 matplotlib。</li>
+        <li><strong>写文案 / 纪要</strong>：把一段会议录音转的文字丢进去，让它出纪要 + 待办，质量能用。</li>
+      </ul>
+      <p>体验跟 Claude Code 基本是一套手感，迁移成本很低。</p>
+
+      <h3>关于「别大额充值」这点，我的做法</h3>
+      <p>计费是 U 积分，<strong>¥1 = 10U，明码标价</strong>。新号<strong>用邀请码注册直接给 300U</strong>，约合 ¥30，跑几十个任务没问题。</p>
+      <p>所以我的建议很简单：<strong>先用这 300U 把你日常真实的活儿跑一遍，稳不稳、好不好用，一周自己心里就有数了，再决定要不要充。</strong> 行业现在这么卷、这么敏感，谁先让你白嫖跑通谁靠谱。</p>
+
+      <blockquote>⚠️ 说明一下规则（别搞混）：<strong>用邀请码注册 = 300U；不用邀请码、只绑手机 = 100U，两者二选一互斥</strong>。所以要白嫖就用邀请码，比绑手机多 200U。</blockquote>
+
+      <h3>怎么上手（3 分钟）</h3>
+
+      <div class="steps">
+        <div class="step">
+          <span class="st">注册领 300U（带邀请码）</span>
+          <div class="invite">
+            <div class="lbl">我的专属邀请码</div>
+            <div class="code">32CDDCC65342</div>
+            <span class="u">注册即得 300U（约 ¥30）</span>
+            <a class="cta" href="https://napi.metask-ai.com/register?invite=32CDDCC65342" target="_blank" rel="noopener">👉 点此注册领 300U</a>
+            <span class="link">https://napi.metask-ai.com/register?invite=32CDDCC65342</span>
+          </div>
+        </div>
+        <div class="step">
+          <span class="st">一行命令装</span>
+          <div class="cmd"><span class="os">macOS / Linux</span><span class="prompt">$</span> curl -fsSL https://metacode.metask-ai.com/install.sh | sh</div>
+          <div class="cmd"><span class="os">Windows（PowerShell）</span><span class="prompt">&gt;</span> irm https://metacode.metask-ai.com/install.ps1 | iex</div>
+          <div class="cmd"><span class="os">验证</span><span class="prompt">$</span> metacode --version</div>
+        </div>
+        <div class="step">
+          <span class="st">授权</span>
+          <p>网页授权（推荐）/ API Key / 设备码，任选其一；登录方式支持 <strong>Linux.do OAuth</strong>，咱论坛的号能直接上。</p>
+        </div>
+        <div class="step">
+          <span class="st">然后就用中文跟它说话干活。</span>
+        </div>
+      </div>
+
+      <p>懒得看命令的，我整理了个一页式上手页（带复制按钮 + FAQ）：<br>
+      👉 <a href="https://yuduoduo503-coder.github.io/metacode-plan/landing.html" target="_blank" rel="noopener" style="color:#0369a1">yuduoduo503-coder.github.io/metacode-plan/landing.html</a></p>
+
+      <h3>坦白几句</h3>
+      <ul>
+        <li>这是<strong>内测</strong>，有些功能还在补（比如邀请返利还没上）；遇到 bug 欢迎楼下吐槽，我会反馈给官方。</li>
+        <li>文末邀请码是我的，<strong>不带码注册只有绑手机 100U</strong>——我不藏着掖着，你自己权衡。</li>
+        <li>不吹「秒杀 Claude」，它就是个<strong>手感接近、国内用着稳、先能白嫖跑通</strong>的平替。合不合适，你拿 300U 跑一周最清楚。</li>
+      </ul>
+
+      <hr>
+      <p style="color:var(--s500);font-size:15px">有问题楼下问，我尽量答。</p>
+    </div>
+
+    <div class="foot">
+      元任务实验室 · MetaCode 内测 &nbsp;|&nbsp; 注册 <a href="https://napi.metask-ai.com">napi.metask-ai.com</a>
+    </div>
+  </div>
+</body>
+</html>
