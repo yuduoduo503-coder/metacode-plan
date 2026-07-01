@@ -78,84 +78,53 @@
 </style>
 </head>
 <body>
-  <div class="previewbar">📄 内容预览 · <b>Linux.do 招募长文</b> · 元任务 MetaCode 内测推广（此顶栏仅预览标注，不属于帖子正文）</div>
+  <div class="previewbar">📄 内容预览 · <b>Linux.do 招募长文</b>（活人感重润色版）· 元任务 MetaCode 内测推广（此顶栏仅预览标注，不属于帖子正文）</div>
 
   <div class="wrap">
     <div class="post-head">
       <div class="crumbs"><span class="tag">扩列 / 资源</span> &nbsp;·&nbsp; 建议标题不带营销味</div>
-      <h1>用 MetaCode 平替 Claude Code 的一周：300U 免费额度，先跑通再决定充不充</h1>
+      <h1>说下我最近在用的 Claude Code 平替 MetaCode，白嫖了 300U 跑了一周再来聊</h1>
       <div class="author">
         <div class="avatar">AI</div>
         <div>
           <div class="name">AI研究员</div>
-          <div class="sub">备用标题：又一个「Claude Code 国产平替」？我先白嫖了 300U 跑了一周，说点实话</div>
+          <div class="sub">备用标题：又双叒一个「CC 国产平替」，但这个我是先白嫖跑通了才敢发的</div>
         </div>
       </div>
     </div>
 
     <div class="post-body">
-      <p>最近 Claude Code 在国内用着越来越折腾——网络、账号、风控，时不时就断一下。市面上「中转 / 平替」一抓一大把，我也踩过几个坑（充了钱结果限速 / 跑路的就不点名了）。所以这阵子我对所有「平替」都先<strong>白嫖跑通再说，绝不先大额充值</strong>。</p>
+      <p>先交代背景。我算 CC 重度用户，今年在国内用得是真上火——三天两头连不上，账号也悬，前阵子有一下午直接啥活没干成，纯耗在网络上了。市面上中转、平替是真多，我也不是没折腾过，充过钱结果给我限速的、用着用着人就没了的，都碰上过。所以现在我一看到「平替」俩字就条件反射：<strong>先白嫖跑通再说，谁上来劝我充大额谁就有鬼</strong>。</p>
 
-      <p>这篇是分享我这一周在用的 <strong>MetaCode</strong>（元任务实验室出的 AI 工作助手 CLI），顺带带个内测邀请。<strong>先把丑话说前面：文末是我的邀请码，用它注册你能拿 300U 免费额度（约 ¥30），够跑几十个真实任务——我图的是参与内测，你图的是白嫖跑通。介意带码的，自己裸注册也行（下面会说区别）。</strong></p>
+      <p>这篇是安利、也算招募，我这一周在用的 <strong>MetaCode</strong>，元任务那边出的一个命令行 AI 助手。丑话放最前头：文末有我的邀请码，你拿它注册能领 <strong>300U</strong>（差不多 30 块钱），够你跑几十个正经任务。我图的是拉人进内测，你图的是白嫖，各取所需——嫌我带私货的，裸注册也行，区别下面说。</p>
 
-      <h3>它是个啥</h3>
-      <p>一个命令行 AI 工作助手，命令就叫 <code>metacode</code>。能读写本地文件、会跑命令，用自然语言把活儿交给它就行——修 bug、写代码、读 CSV 出图、写文案、整理会议纪要都能干。</p>
-      <p>底层走的是<strong>原生 Claude 协议、完整 CC 那套能力</strong>，同时对国产模型（MiniMax M2.5、GLM-5.1 这些）做了优化。官方说比同类快约 30%、数据本地处理不外传——这俩我没法精确测，但<strong>体感延迟确实稳</strong>，一周没遇到中途抽风。</p>
+      <p>东西本身没啥花哨的，就一个 CLI，命令就叫 <code>metacode</code>。能读写你本地文件、能跑命令，你拿中文跟它说人话它就去干活。我这一周主要拿它办了仨事：一个是修 bug，我把一段报错甩过去，它自己把相关文件翻了一遍，定位、给方案、改完还顺手把测试跑了，这块跟 CC 基本一个手感；一个是数据出图，手头有个 csv 懒得自己写 matplotlib，让它统计加画趋势图导成 png，几句话搞定；剩下就是杂活，会议录音转的文字丢进去让它出纪要和待办，质量将就能用，反正比我手动整理快。</p>
 
-      <h3>我这一周拿它干了啥</h3>
-      <ul>
-        <li><strong>修 bug</strong>：贴报错让它定位，它会自己读相关文件、给修法、改完顺手把测试跑一遍。</li>
-        <li><strong>数据出图</strong>：丢个 CSV 让它统计 + 画趋势图导 PNG，省了我手搓 matplotlib。</li>
-        <li><strong>写文案 / 纪要</strong>：把一段会议录音转的文字丢进去，让它出纪要 + 待办，质量能用。</li>
-      </ul>
-      <p>体验跟 Claude Code 基本是一套手感，迁移成本很低。</p>
+      <p>底层它走的是原生 Claude 协议，CC 那套能力是全的，同时对国产模型（MiniMax M2.5、GLM-5.1 那些）做了优化。官方还说比同类快 30%、数据本地处理不外传——这俩我没法给你精确测，但我这一周<strong>体感延迟是真稳，没遇到跑一半抽风的情况</strong>，这点对我来说比啥都强。</p>
 
-      <h3>关于「别大额充值」这点，我的做法</h3>
-      <p>计费是 U 积分，<strong>¥1 = 10U，明码标价</strong>。新号<strong>用邀请码注册直接给 300U</strong>，约合 ¥30，跑几十个任务没问题。</p>
-      <p>所以我的建议很简单：<strong>先用这 300U 把你日常真实的活儿跑一遍，稳不稳、好不好用，一周自己心里就有数了，再决定要不要充。</strong> 行业现在这么卷、这么敏感，谁先让你白嫖跑通谁靠谱。</p>
+      <p>重点说钱，因为我知道你们最上心这个。计费是 U 积分，<strong>¥1 = 10U，明码的</strong>，没那些花里胡哨的换算。新号用邀请码注册直接给 300U，约合 30 块，拿去跑几十个任务没压力。我态度就一句：拿这 300U 先把你日常真活儿跑一遍，一周下来稳不稳、顺不顺手，你心里自然有数，到时候再决定充不充。行情现在这么敏感，谁让你先白嫖跑通谁才值得信，反过来不让你试就催你充大额的，你们都懂。</p>
 
-      <blockquote>⚠️ 说明一下规则（别搞混）：<strong>用邀请码注册 = 300U；不用邀请码、只绑手机 = 100U，两者二选一互斥</strong>。所以要白嫖就用邀请码，比绑手机多 200U。</blockquote>
+      <blockquote>有个地方别踩坑：<strong>用邀请码注册是 300U，不用码、光绑手机是 100U，这俩二选一、不叠加</strong>。想白嫖到满就走邀请码，比绑手机多整整 200U，别搞反了。</blockquote>
 
-      <h3>怎么上手（3 分钟）</h3>
-
-      <div class="steps">
-        <div class="step">
-          <span class="st">注册领 300U（带邀请码）</span>
-          <div class="invite">
-            <div class="lbl">我的专属邀请码</div>
-            <div class="code">32CDDCC65342</div>
-            <span class="u">注册即得 300U（约 ¥30）</span>
-            <a class="cta" href="https://napi.metask-ai.com/register?invite=32CDDCC65342" target="_blank" rel="noopener">👉 点此注册领 300U</a>
-            <span class="link">https://napi.metask-ai.com/register?invite=32CDDCC65342</span>
-          </div>
-        </div>
-        <div class="step">
-          <span class="st">一行命令装</span>
-          <div class="cmd"><span class="os">macOS / Linux</span><span class="prompt">$</span> curl -fsSL https://metacode.metask-ai.com/install.sh | sh</div>
-          <div class="cmd"><span class="os">Windows（PowerShell）</span><span class="prompt">&gt;</span> irm https://metacode.metask-ai.com/install.ps1 | iex</div>
-          <div class="cmd"><span class="os">验证</span><span class="prompt">$</span> metacode --version</div>
-        </div>
-        <div class="step">
-          <span class="st">授权</span>
-          <p>网页授权（推荐）/ API Key / 设备码，任选其一；登录方式支持 <strong>Linux.do OAuth</strong>，咱论坛的号能直接上。</p>
-        </div>
-        <div class="step">
-          <span class="st">然后就用中文跟它说话干活。</span>
-        </div>
+      <p>上手大概三分钟。先注册领 300U（带我的码）：</p>
+      <div class="invite">
+        <div class="lbl">我的邀请码</div>
+        <div class="code">32CDDCC65342</div>
+        <span class="u">注册即得 300U（约 ¥30）</span>
+        <a class="cta" href="https://napi.metask-ai.com/register?invite=32CDDCC65342" target="_blank" rel="noopener">👉 点此注册领 300U</a>
+        <span class="link">https://napi.metask-ai.com/register?invite=32CDDCC65342</span>
       </div>
 
-      <p>懒得看命令的，我整理了个一页式上手页（带复制按钮 + FAQ）：<br>
-      👉 <a href="https://yuduoduo503-coder.github.io/metacode-plan/landing.html" target="_blank" rel="noopener" style="color:#0369a1">yuduoduo503-coder.github.io/metacode-plan/landing.html</a></p>
+      <p>装就一行，装完 <code>metacode --version</code> 看眼版本号出来没：</p>
+      <div class="cmd"><span class="os">mac / Linux</span><span class="prompt">$</span> curl -fsSL https://metacode.metask-ai.com/install.sh | sh</div>
+      <div class="cmd"><span class="os">Windows（PowerShell）</span><span class="prompt">&gt;</span> irm https://metacode.metask-ai.com/install.ps1 | iex</div>
 
-      <h3>坦白几句</h3>
-      <ul>
-        <li>这是<strong>内测</strong>，有些功能还在补（比如邀请返利还没上）；遇到 bug 欢迎楼下吐槽，我会反馈给官方。</li>
-        <li>文末邀请码是我的，<strong>不带码注册只有绑手机 100U</strong>——我不藏着掖着，你自己权衡。</li>
-        <li>不吹「秒杀 Claude」，它就是个<strong>手感接近、国内用着稳、先能白嫖跑通</strong>的平替。合不合适，你拿 300U 跑一周最清楚。</li>
-      </ul>
+      <p>授权网页 / API Key / 设备码随便挑一个，登录支持 <strong>Linux.do OAuth</strong>，咱论坛这号能直接上，省事。然后用中文跟它唠就完了。懒得敲命令的，我弄了个一页纸的上手页，带复制按钮和 FAQ：<a href="https://yuduoduo503-coder.github.io/metacode-plan/landing.html" target="_blank" rel="noopener" style="color:#0369a1">yuduoduo503-coder.github.io/metacode-plan/landing.html</a></p>
+
+      <p>最后几句实在话。这是内测，有些功能还没齐（比如邀请返利现在还没上线），你要是撞见 bug 尽管楼下开喷，我收集了往官方那边递。文末那个码是我的，我也没藏着，带码你多 200U、不带就绑手机 100U，自己权衡，我不搞道德绑架。我更不吹什么秒杀 CC、吊打谁——它就是个<strong>手感接近、国内用着稳、还能让你先白嫖跑通</strong>的平替，到底合不合你的活儿，你拿 300U 跑一周，比我在这儿说一百句都准。</p>
 
       <hr>
-      <p style="color:var(--s500);font-size:15px">有问题楼下问，我尽量答。</p>
+      <p style="color:var(--s500);font-size:15px">有问题楼下问，我在线就答。</p>
     </div>
 
     <div class="foot">
